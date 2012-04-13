@@ -106,34 +106,26 @@
 		<li>
 			<h3>Inheritance/Extending</h3>
 		</li>
-		<li class="slide" id="individually">
-			<h3>Let's look at these features individually....</h3>
-		</li>
 	</ul>
 </section>
 
 
-<section class="slide" id="sass-variables-before">
+<section class="slide" id="sass-variables">
 	<h2>Variables</h2>
 	<h3>Input...</h3>
 	<p><pre><code class="prettyprint">$blue: #3bbfce;
 $margin: 16px;
-$sans-serif: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
+$sans-serif: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 
 div {
 	color: $blue;
 	font: 16px 'Museo Sans', $sans-serif;
 	margin: $margin;
 }</code></pre></p>
-</section>
-
-
-<section class="slide" id="sass-variables-after">
-	<h2>Variables</h2>
 	<h3>Output...</h3>
 	<p><pre><code class="prettyprint">div {
   color: #3bbfce;
-  font: 16px "Museo Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+  font: 16px "Museo Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   margin: 16px;
 }</code></pre></p>
 </section>
