@@ -6,27 +6,27 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	
+
 	<title>Sexy Style Sheets with Sass (and Compass)</title>
-	
+
 	<meta name="description" content="A brief overview of the Sass style sheet preprocessor and the Compass framework for Sass.">
 	<meta name="author" content="Chris Van Patten">
 	<meta name="viewport" content="width=1024, user-scalable=no">
-	
+
 	<!-- Core and extension CSS files -->
 	<link rel="stylesheet" href="deckjs/core/deck.core.css">
 	<link rel="stylesheet" href="deckjs/extensions/menu/deck.menu.css">
 	<link rel="stylesheet" href="deckjs/extensions/navigation/deck.navigation.css">
 	<link rel="stylesheet" href="deckjs/extensions/status/deck.status.css">
-	
+
 	<!-- Style theme. -->
 	<link rel="stylesheet" href="deckjs/themes/style/swiss.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/prettify.css">
-	
+
 	<!-- Transition theme. -->
 	<link rel="stylesheet" href="deckjs/themes/transition/horizontal-slide.css">
-	
+
 	<script src="deckjs/js/modernizr.custom.js"></script>
 </head>
 
@@ -84,22 +84,246 @@
 <section class="slide" id="sass-features">
 	<h2>Sass Features</h2>
 	<ul>
-		<li class="slide" id="sass-feature-1">
+		<li>
 			<h3>Variables</h3>
 		</li>
-		<li class="slide" id="sass-feature-2">
-			<h3>Math and helpers</h3>
+		<li>
+			<h3>Math</h3>
 		</li>
-		<li class="slide" id="sass-feature-3">
+		<li>
+			<h3>Helpers</h3>
+		</li>
+		<li>
 			<h3>Nesting</h3>
 		</li>
-		<li class="slide" id="sass-feature-4">
+		<li>
 			<h3>Mixins</h3>
 		</li>
-		<li class="slide" id="sass-feature-5">
+		<li>
 			<h3>Inheritance/Extending</h3>
 		</li>
+		<li class="slide" id="individually">
+			<h3>Let's look at these features individually....</h3>
+		</li>
 	</ul>
+</section>
+
+<section class="slide" id="sass-variables-before">
+	<h2>Variables</h2>
+	<h3>Input...</h3>
+	<p><pre><code class="prettyprint">$blue: #3bbfce;
+$margin: 16px;
+$sans-serif: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
+
+div {
+	color: $blue;
+	font: 16px 'Museo Sans', $sans-serif;
+	margin: $margin;
+}</code></pre></p>
+</section>
+
+<section class="slide" id="sass-variables-after">
+	<h2>Variables</h2>
+	<h3>Output...</h3>
+	<p><pre><code class="prettyprint">div {
+  color: #3bbfce;
+  font: 16px "Museo Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+  margin: 16px;
+}</code></pre></p>
+</section>
+
+<section class="slide" id="sass-math">
+	<h2>Math</h2>
+	<h3>Math</h3>
+	<p><pre><code class="prettyprint">div {
+	width: 300px - (8px + 8px);
+	padding: 8px;
+	margin: $margin;
+}</code></pre></p>
+	<h3>Math with variables</h3>
+	<p><pre><code class="prettyprint">$margin: 16px;
+
+div {
+	width: 300px - $margin;
+	padding: $margin / 2;
+	margin: $margin;
+}</code></pre></p>
+</section>
+
+<section class="slide" id="sass-math-after">
+	<h2>Math</h2>
+	<h3>Output...</h3>
+	<p><pre><code class="prettyprint">div {
+  width: 284px;
+  padding: 8px;
+  margin: 16px;
+}</code></pre></p>
+</section>
+
+<section class="slide" id="sass-helpers">
+	<h2>Helpers/Sass Functions</h2>
+	<h3>Color functions</h3>
+	<ul>
+		<div class="slide" id="color-funcs">
+			<li>
+				<p>adjust-hue()</p>
+			</li>
+			<li>
+				<p>lighten()</p>
+			</li>
+			<li>
+				<p>darken()</p>
+			</li>
+			<li>
+				<p>saturate()</p>
+			</li>
+			<li>
+				<p>grayscale()</p>
+			</li>
+			<li>
+				<p>invert()</p>
+			</li>
+		</div>
+		<li class="slide" id="more-sass-helpers">
+			<p>For even more, see the <a href="http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html">Sass documentation</a>.</p>
+		</li>
+	</ul>
+</section>
+
+<section class="slide" id="sass-helpers-in-practice">
+	<h2>Helpers/Sass Functions</h2>
+	<p><pre><code class="prettyprint">a {
+	color: #0000FF;
+}
+
+a:hover, a:visited:hover {
+	color: darken(#0000FF, 10%);
+}
+
+a:visited {
+
+	color: darken(#0000FF, 5%);
+}
+
+a:active {
+	color: lighten(#0000FF, 10%);
+}</code></pre></p>
+</section>
+
+<section class="slide" id="sass-helpers-in-practice-2">
+	<h2>Helpers/Sass Functions</h2>
+	<p><pre><code class="prettyprint">$link-color: #0000FF;
+
+a {
+	color: $link-color;
+}
+
+a:hover, a:visited:hover {
+	color: darken($link-color, 10%);
+}
+
+a:visited {
+	color: darken($link-color, 5%);
+}
+
+a:active {
+	color: lighten($link-color, 10%);
+}</code></pre></p>
+</section>
+
+<section class="slide" id="sass-helpers-in-practice-3">
+	<h2>Helpers/Sass Functions</h2>
+	<p><pre><code class="prettyprint">a {
+  color: blue;
+}
+
+a:hover, a:visited:hover {
+  color: #0000cc;
+}
+
+a:visited {
+  color: #0000e6;
+}
+
+a:active {
+  color: #3333ff;
+}</code></pre></p>
+</section>
+
+<section class="slide" id="sass-nesting-1">
+	<h2>Nesting</h2>
+	<h3>Input...</h3>
+	<p><pre><code class="prettyprint">table.hl {
+	margin: 2em 0;
+
+	td.ln {
+		text-align: right;
+	}
+}
+
+li {
+	font: {
+		family: serif;
+		weight: bold;
+		size: 1.2em;
+	}
+}</code></pre></p>
+</section>
+
+<section class="slide" id="sass-nesting-2">
+	<h2>Nesting</h2>
+	<h3>Output...</h3>
+	<p><pre><code class="prettyprint">table.hl {
+  margin: 2em 0;
+}
+table.hl td.ln {
+  text-align: right;
+}
+
+li {
+  font-family: serif;
+  font-weight: bold;
+  font-size: 1.2em;
+}</code></pre></p>
+</section>
+
+<section class="slide" id="sass-nesting-3">
+	<h2>Nesting</h2>
+	<h3>Input...</h3>
+	<p><pre><code class="prettyprint">$link-color: #0000FF;
+
+a {
+	color: $link-color;
+
+	&:hover, &:visited:hover {
+		color: darken($link-color, 10%);
+	}
+
+	&:visited {
+		color: darken($link-color, 5%);
+	}
+
+	&:active {
+		color: lighten($link-color, 10%);
+	}
+}</code></pre></p>
+</section>
+
+<section class="slide" id="sass-nesting-4">
+	<h2>Nesting</h2>
+	<h3>Output...</h3>
+	<p><pre><code class="prettyprint">a {
+  color: blue;
+}
+a:hover, a:visited:hover {
+  color: #0000cc;
+}
+a:visited {
+  color: #0000e6;
+}
+a:active {
+  color: #3333ff;
+}</code></pre></p>
 </section>
 
 <!-- <section class="slide" id="preproc-before">
