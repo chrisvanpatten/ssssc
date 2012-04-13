@@ -33,10 +33,12 @@
 <body class="deck-container">
 
 <!-- Begin slides -->
+
 <section class="slide" id="title-slide">
 	<h1>Sexy Style Sheets with Sass</h1>
 	<h2>(and Compass)</h2>
 </section>
+
 
 <section class="slide" id="cssproblems">
 	<h2>What's the problem with CSS?</h2>
@@ -59,6 +61,7 @@
 	</ul>
 </section>
 
+
 <section class="slide" id="sass-one">
 	<h2>How can Sass help?</h2>
 	<ul>
@@ -80,6 +83,7 @@
 		</li>
 	</ul>
 </section>
+
 
 <section class="slide" id="sass-features">
 	<h2>Sass Features</h2>
@@ -108,6 +112,7 @@
 	</ul>
 </section>
 
+
 <section class="slide" id="sass-variables-before">
 	<h2>Variables</h2>
 	<h3>Input...</h3>
@@ -122,6 +127,7 @@ div {
 }</code></pre></p>
 </section>
 
+
 <section class="slide" id="sass-variables-after">
 	<h2>Variables</h2>
 	<h3>Output...</h3>
@@ -131,6 +137,7 @@ div {
   margin: 16px;
 }</code></pre></p>
 </section>
+
 
 <section class="slide" id="sass-math">
 	<h2>Math</h2>
@@ -150,6 +157,7 @@ div {
 }</code></pre></p>
 </section>
 
+
 <section class="slide" id="sass-math-after">
 	<h2>Math</h2>
 	<h3>Output...</h3>
@@ -159,6 +167,7 @@ div {
   margin: 16px;
 }</code></pre></p>
 </section>
+
 
 <section class="slide" id="sass-helpers">
 	<h2>Helpers/Sass Functions</h2>
@@ -190,6 +199,7 @@ div {
 	</ul>
 </section>
 
+
 <section class="slide" id="sass-helpers-in-practice">
 	<h2>Helpers/Sass Functions</h2>
 	<p><pre><code class="prettyprint">a {
@@ -209,6 +219,7 @@ a:active {
 	color: lighten(#0000FF, 10%);
 }</code></pre></p>
 </section>
+
 
 <section class="slide" id="sass-helpers-in-practice-2">
 	<h2>Helpers/Sass Functions</h2>
@@ -231,6 +242,7 @@ a:active {
 }</code></pre></p>
 </section>
 
+
 <section class="slide" id="sass-helpers-in-practice-3">
 	<h2>Helpers/Sass Functions</h2>
 	<p><pre><code class="prettyprint">a {
@@ -249,6 +261,7 @@ a:active {
   color: #3333ff;
 }</code></pre></p>
 </section>
+
 
 <section class="slide" id="sass-nesting-1">
 	<h2>Nesting</h2>
@@ -270,6 +283,7 @@ li {
 }</code></pre></p>
 </section>
 
+
 <section class="slide" id="sass-nesting-2">
 	<h2>Nesting</h2>
 	<h3>Output...</h3>
@@ -286,6 +300,7 @@ li {
   font-size: 1.2em;
 }</code></pre></p>
 </section>
+
 
 <section class="slide" id="sass-nesting-3">
 	<h2>Nesting</h2>
@@ -309,6 +324,7 @@ a {
 }</code></pre></p>
 </section>
 
+
 <section class="slide" id="sass-nesting-4">
 	<h2>Nesting</h2>
 	<h3>Output...</h3>
@@ -326,55 +342,132 @@ a:active {
 }</code></pre></p>
 </section>
 
-<!-- <section class="slide" id="preproc-before">
-	<h2>They turn this...</h2>
-	<p><pre><code class="prettyprint">$blue: #3bbfce;
-$margin: 16px;
 
-.content-navigation {
-	border-color: $blue;
-	color: darken($blue, 9%);
-
-	a {
-		background: #FFF;
-		@include opacity(0.5);
-
-		&:hover {
-			background: #DDD;
-		}
-	}
+<section class="slide" id="sass-mixins">
+	<h2>Mixins</h2>
+	<h3>Input...</h3>
+	<p><pre><code class="prettyprint">@mixin opacity($amount) {
+	filter: progid:DXImageTransform.Microsoft.<br>Alpha(Opacity=#{$amount * 100});
+	opacity: $amount;
 }
 
-.border {
-	padding: $margin / 2;
-	margin: $margin / 2;
-	border-color: $blue;
+a {
+	@include opacity(0.2);
+}</code></pre></p>
+	<h3>Output...</h3>
+	<p><pre><code class="prettyprint">a {
+  filter: progid:DXImageTransform.Microsoft.<br>Alpha(Opacity=20);
+  opacity: 0.2;
 }</code></pre></p>
 </section>
 
-<section class="slide" id="preproc-after">
-	<h2>Into this!</h2>
-	<p><pre><code class="prettyprint">.content-navigation {
-	border-color: #3bbfce;
-	color: #2ca2af;
+
+<section class="slide" id="sass-mixins-2">
+	<h2>Mixins</h2>
+	<h3>Input...</h3>
+	<p><pre><code class="prettyprint">@mixin image-replacement() {
+	text-indent: -9999em;
+	overflow: hidden;
 }
 
-.content-navigation a {
-	background: #FFF;
-	filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
-	opacity:0.5
-}
-
-.content-navigation a:hover {
-	background: #DDD;
-}
-
-.border {
-	padding: 8px;
-	margin: 8px;
-	border-color: #3bbfce;
+a {
+	@include image-replacement();
 }</code></pre></p>
-</section> -->
+	<h3>Output...</h3>
+	<p><pre><code class="prettyprint">a {
+	text-indent -9999em;
+	overflow: hidden;
+}</code></pre></p>
+</section>
+
+
+<section class="slide" id="sass-extends">
+	<h2>Extending and inheritance</h2>
+	<h3>Input...</h3>
+	<p><pre><code class="prettyprint">.box {
+	border: 2px solid black;
+	margin: 1em;
+}
+
+.important-box {
+	@extends .box;
+	background-color: #CCC;
+	padding-left: 48px;
+}
+
+.error-box {
+	@extends .important-box;
+	background-color: #FFF;
+}</code></pre></p>
+</section>
+
+
+<section class="slide" id="sass-extends-out">
+	<h2>Extending and inheritance</h2>
+	<h3>Output...</h3>
+	<p><pre><code class="prettyprint">.box, .important-box, .error-box {
+	border: 2px solid black;
+	margin: 1em;
+}
+
+.important-box, .error-box {
+	background-color: #CCC;
+	padding-left: 48px;
+}
+
+.error-box {
+	background-color: #FCC;
+}</code></pre></p>
+</section>
+
+
+<section class="slide" id="phew">
+	<h1>PHEW!<br>That's a lot.</h1>
+</section>
+
+
+<section class="slide" id="why-sass">
+	<h2>So why Sass? Why not Less/Stylus/etc?</h2>
+	<ul>
+		<li class="slide" id="why-sass-1">
+			<h3>CSS3 is borrowing from Sass</h3>
+			<p>See <a href="http://dev.w3.org/csswg/css3-hierarchies/">nesting spec</a></p>
+		</li>
+		<li class="slide" id="why-sass-2">
+			<h3>Smarter, more extensible syntax</h3>
+		</li>
+		<li class="slide" id="why-sass-3">
+			<h3>Compass.</h3>
+			<p>Compass will <em>blow your mind</em>.</p>
+		</li>
+	</ul>
+</section>
+
+
+<section class="slide" id="compass">
+	<h2>Compass</h2>
+	<p>Compass is a framework built on Sass, offering curated mixins and additional functionality.</p>
+	<h3>Like what?</h3>
+	<ul>
+		<li class="slide" id="what-is-compass-1">
+			<p>A full range of pre-built CSS3 mixins</p>
+		</li>
+		<li class="slide" id="what-is-compass-2">
+			<p>Intelligent URL handlers for making asset management a breeze</p>
+		</li>
+		<li class="slide" id="what-is-compass-3">
+			<p>Callbacks so you can do "stuff" on compilation</p>
+		</li>
+		<li class="slide" id="what-is-compass-4">
+			<p>Automatic image generation (sprites and more)</p>
+		</li>
+		<li class="slide" id="what-is-compass-5">
+			<p>and that's just the start!</p>
+		</li>
+	</ul>
+</section>
+
+
 
 <!-- deck.navigation snippet -->
 <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
