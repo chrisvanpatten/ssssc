@@ -1,0 +1,17 @@
+@import "compass/css3";
+
+.deck-permalink {
+	display: none;
+}
+
+#title-slide {
+	h2 {
+		text-align: center;
+		border: none;
+		position: absolute;
+		
+		right: 0;
+		bottom: 10px;
+		left: 0;
+	}
+}
