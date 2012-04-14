@@ -1,5 +1,6 @@
 .sass-cache/
+test.css
+sftp-config.json
 progress/
 .DS_Store
-test.css
 test.scss

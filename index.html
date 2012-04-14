@@ -112,8 +112,9 @@
 
 <section class="slide" id="sass-variables">
 	<h2>Variables</h2>
+
 	<h3>Input...</h3>
-	<p><pre><code class="prettyprint">$blue: #3bbfce;
+	<pre><code class="prettyprint">$blue: #3bbfce;
 $margin: 16px;
 $sans-serif: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 
@@ -121,43 +122,46 @@ div {
 	color: $blue;
 	font: 16px 'Museo Sans', $sans-serif;
 	margin: $margin;
-}</code></pre></p>
+}</code></pre>
+
 	<h3>Output...</h3>
-	<p><pre><code class="prettyprint">div {
+	<pre><code class="prettyprint">div {
   color: #3bbfce;
   font: 16px "Museo Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   margin: 16px;
-}</code></pre></p>
+}</code></pre>
 </section>
 
 
 <section class="slide" id="sass-math">
 	<h2>Math</h2>
-	<h3>Math</h3>
-	<p><pre><code class="prettyprint">div {
+
+	<h3>Basic Math</h3>
+	<pre><code class="prettyprint">div {
 	width: 300px - (8px + 8px);
 	padding: 8px;
 	margin: $margin;
-}</code></pre></p>
+}</code></pre>
+
 	<h3>Math with variables</h3>
-	<p><pre><code class="prettyprint">$margin: 16px;
+	<pre><code class="prettyprint">$margin: 16px;
 
 div {
 	width: 300px - $margin;
 	padding: $margin / 2;
 	margin: $margin;
-}</code></pre></p>
+}</code></pre>
 </section>
 
 
 <section class="slide" id="sass-math-after">
 	<h2>Math</h2>
 	<h3>Output...</h3>
-	<p><pre><code class="prettyprint">div {
+	<pre><code class="prettyprint">div {
   width: 284px;
   padding: 8px;
   margin: 16px;
-}</code></pre></p>
+}</code></pre>
 </section>
 
 
@@ -165,26 +169,24 @@ div {
 	<h2>Helpers/Sass Functions</h2>
 	<h3>Color functions</h3>
 	<ul>
-		<div class="slide" id="color-funcs">
-			<li>
-				<p>adjust-hue()</p>
-			</li>
-			<li>
-				<p>lighten()</p>
-			</li>
-			<li>
-				<p>darken()</p>
-			</li>
-			<li>
-				<p>saturate()</p>
-			</li>
-			<li>
-				<p>grayscale()</p>
-			</li>
-			<li>
-				<p>invert()</p>
-			</li>
-		</div>
+		<li>
+			<p>adjust-hue()</p>
+		</li>
+		<li>
+			<p>lighten()</p>
+		</li>
+		<li>
+			<p>darken()</p>
+		</li>
+		<li>
+			<p>saturate()</p>
+		</li>
+		<li>
+			<p>grayscale()</p>
+		</li>
+		<li>
+			<p>invert()</p>
+		</li>
 		<li class="slide" id="more-sass-helpers">
 			<p>For even more, see the <a href="http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html">Sass documentation</a>.</p>
 		</li>
@@ -194,7 +196,7 @@ div {
 
 <section class="slide" id="sass-helpers-in-practice">
 	<h2>Helpers/Sass Functions</h2>
-	<p><pre><code class="prettyprint">a {
+	<pre><code class="prettyprint">a {
 	color: #0000FF;
 }
 
@@ -209,13 +211,13 @@ a:visited {
 
 a:active {
 	color: lighten(#0000FF, 10%);
-}</code></pre></p>
+}</code></pre>
 </section>
 
 
 <section class="slide" id="sass-helpers-in-practice-2">
 	<h2>Helpers/Sass Functions</h2>
-	<p><pre><code class="prettyprint">$link-color: #0000FF;
+	<pre><code class="prettyprint">$link-color: #0000FF;
 
 a {
 	color: $link-color;
@@ -231,13 +233,13 @@ a:visited {
 
 a:active {
 	color: lighten($link-color, 10%);
-}</code></pre></p>
+}</code></pre>
 </section>
 
 
 <section class="slide" id="sass-helpers-in-practice-3">
 	<h2>Helpers/Sass Functions</h2>
-	<p><pre><code class="prettyprint">a {
+	<pre><code class="prettyprint">a {
   color: blue;
 }
 
@@ -251,14 +253,15 @@ a:visited {
 
 a:active {
   color: #3333ff;
-}</code></pre></p>
+}</code></pre>
 </section>
 
 
 <section class="slide" id="sass-nesting-1">
 	<h2>Nesting</h2>
+
 	<h3>Input...</h3>
-	<p><pre><code class="prettyprint">table.hl {
+	<pre><code class="prettyprint">table.hl {
 	margin: 2em 0;
 
 	td.ln {
@@ -272,14 +275,15 @@ li {
 		weight: bold;
 		size: 1.2em;
 	}
-}</code></pre></p>
+}</code></pre>
 </section>
 
 
 <section class="slide" id="sass-nesting-2">
 	<h2>Nesting</h2>
+
 	<h3>Output...</h3>
-	<p><pre><code class="prettyprint">table.hl {
+	<pre><code class="prettyprint">table.hl {
   margin: 2em 0;
 }
 table.hl td.ln {
@@ -290,14 +294,15 @@ li {
   font-family: serif;
   font-weight: bold;
   font-size: 1.2em;
-}</code></pre></p>
+}</code></pre>
 </section>
 
 
 <section class="slide" id="sass-nesting-3">
 	<h2>Nesting</h2>
+
 	<h3>Input...</h3>
-	<p><pre><code class="prettyprint">$link-color: #0000FF;
+	<pre><code class="prettyprint">$link-color: #0000FF;
 
 a {
 	color: $link-color;
@@ -313,14 +318,15 @@ a {
 	&:active {
 		color: lighten($link-color, 10%);
 	}
-}</code></pre></p>
+}</code></pre>
 </section>
 
 
 <section class="slide" id="sass-nesting-4">
 	<h2>Nesting</h2>
+
 	<h3>Output...</h3>
-	<p><pre><code class="prettyprint">a {
+	<pre><code class="prettyprint">a {
   color: blue;
 }
 a:hover, a:visited:hover {
@@ -331,52 +337,54 @@ a:visited {
 }
 a:active {
   color: #3333ff;
-}</code></pre></p>
+}</code></pre>
 </section>
 
 
 <section class="slide" id="sass-mixins">
 	<h2>Mixins</h2>
+
 	<h3>Input...</h3>
-	<p><pre><code class="prettyprint">@mixin opacity($amount) {
+	<pre><code class="prettyprint">@mixin opacity($amount) {
 	filter: progid:DXImageTransform.Microsoft.<br>Alpha(Opacity=#{$amount * 100});
 	opacity: $amount;
 }
 
 a {
 	@include opacity(0.2);
-}</code></pre></p>
+}</code></pre>
+
 	<h3>Output...</h3>
-	<p><pre><code class="prettyprint">a {
+	<pre><code class="prettyprint">a {
   filter: progid:DXImageTransform.Microsoft.<br>Alpha(Opacity=20);
   opacity: 0.2;
-}</code></pre></p>
+}</code></pre>
 </section>
 
 
 <section class="slide" id="sass-mixins-2">
 	<h2>Mixins</h2>
 	<h3>Input...</h3>
-	<p><pre><code class="prettyprint">@mixin image-replacement() {
+	<pre><code class="prettyprint">@mixin image-replacement() {
 	text-indent: -9999em;
 	overflow: hidden;
 }
 
 a {
 	@include image-replacement();
-}</code></pre></p>
+}</code></pre>
 	<h3>Output...</h3>
-	<p><pre><code class="prettyprint">a {
+	<pre><code class="prettyprint">a {
 	text-indent -9999em;
 	overflow: hidden;
-}</code></pre></p>
+}</code></pre>
 </section>
 
 
 <section class="slide" id="sass-extends">
 	<h2>Extending and inheritance</h2>
 	<h3>Input...</h3>
-	<p><pre><code class="prettyprint">.box {
+	<pre><code class="prettyprint">.box {
 	border: 2px solid black;
 	margin: 1em;
 }
@@ -390,14 +398,14 @@ a {
 .error-box {
 	@extends .important-box;
 	background-color: #FFF;
-}</code></pre></p>
+}</code></pre>
 </section>
 
 
 <section class="slide" id="sass-extends-out">
 	<h2>Extending and inheritance</h2>
 	<h3>Output...</h3>
-	<p><pre><code class="prettyprint">.box, .important-box, .error-box {
+	<pre><code class="prettyprint">.box, .important-box, .error-box {
 	border: 2px solid black;
 	margin: 1em;
 }
@@ -409,7 +417,7 @@ a {
 
 .error-box {
 	background-color: #FCC;
-}</code></pre></p>
+}</code></pre>
 </section>
 
 
@@ -448,12 +456,28 @@ a {
 	<h3>CSS3 Mixins</h3>
 	<p>Built-in and maintained by Compass. Never write vendor prefixes again!</p>
 	<ul>
-		<li><p>Before: <pre><code class="prettyprint">div {
-	background: image-url('image.png');
-}</code></pre></p></li>
-		<li><p>After: <pre><code class="prettyprint">div {
-	background: url('/path/to/image.png');
-}</code></pre></p></li>
+		<li>
+			<p>Before:</p>
+			<pre style="line-height: 1; padding: 0.5em;"><code class="prettyprint" style="font-size: 60%; line-height: 1;">@import "compass/css3";
+
+div {
+	@include border-top-left-radius(6px);
+	@include box-sizing('border-box');
+}</code></pre>
+		</li>
+		<li>
+			<p>After:</p>
+			<pre style="line-height: 1; padding: 0.5em;"><code class="prettyprint" style="font-size: 60%; line-height: 1;">div {
+  -moz-border-radius-topleft: 6px;
+  -webkit-border-top-left-radius: 6px;
+  -ms-border-top-left-radius: 6px;
+  -o-border-top-left-radius: 6px;
+  border-top-left-radius: 6px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}</code></pre>
+		</li>
 	</ul>
 </section>
 
@@ -463,12 +487,18 @@ a {
 	<h3>URL handlers</h3>
 	<p>Define paths in your Compass project config, and make asset management a breeze</p>
 	<ul>
-		<li><p>Before: <pre><code class="prettyprint">div {
+		<li>
+			<p>Before:</p>
+			<pre><code class="prettyprint">div {
 	background: image-url('image.png');
-}</code></pre></p></li>
-		<li><p>After: <pre><code class="prettyprint">div {
+}</code></pre>
+		</li>
+		<li>
+			<p>After:</p>
+			<pre><code class="prettyprint">div {
 	background: url('/path/to/image.png');
-}</code></pre></p></li>
+}</code></pre>
+		</li>
 	</ul>
 </section>
 
@@ -478,8 +508,9 @@ a {
 	<h3>Callbacks</h3>
 	<p>Do "stuff" as part of the compilation process</p>
 	<ul>
-		<li><p>In your Compass config.rb file:</p>
-		<p><pre style="line-height: 1;"><code class="prettyprint" style="font-size: 70%; line-height: 1;"># Require
+		<li>
+			<p>In your Compass config.rb file:</p>
+			<pre style="line-height: 1;"><code class="prettyprint" style="font-size: 70%; line-height: 1;"># Require
 require 'net/ssh'
 require 'net/sftp'
 
@@ -496,18 +527,24 @@ on_stylesheet_saved do |filename|
 		sftp.upload! $local_path_to_css_file, $remote_path_to_css_file
 	end
 	puts ">>> File uploaded."
-end</code></pre></p></li>
+end</code></pre>
+		</li>
 	</ul>
 </section>
 
 <section class="slide" id="compass-5">
 	<h2>Compass</h2>
-	<h3>Image generation</h3>
+	<h3>Image generation (Sprites)</h3>
 	<p>Automatically generate PNG images with the bundled ChunkyPNG library</p>
 	<ul>
-		<li><p>Before: <pre style="line-height: 1;"><code class="prettyprint" style="font-size: 80%; line-height: 1;">@import "icons/*.png";
-@include all-icons-sprites;</code></pre></p></li>
-		<li><p>After: <pre style="line-height: 1;"><code class="prettyprint" style="font-size: 80%; line-height: 1;">.icons-sprite,
+		<li>
+			<p>Before:</p>
+			<pre style="line-height: 1;"><code class="prettyprint" style="font-size: 80%; line-height: 1;">@import "icons/*.png";
+@include all-icons-sprites;</code></pre>
+		</li>
+		<li>
+			<p>After:</p>
+			<pre style="line-height: 1;"><code class="prettyprint" style="font-size: 80%; line-height: 1;">.icons-sprite,
 .icons-delete,
 .icons-edit,
 .icons-new,
@@ -516,28 +553,35 @@ end</code></pre></p></li>
 .icons-delete { background-position: 0 0; }
 .icons-edit   { background-position: 0 -32px; }
 .icons-new    { background-position: 0 -64px; }
-.icons-save   { background-position: 0 -96px; }</code></pre></p></li>
+.icons-save   { background-position: 0 -96px; }</code></pre>
+		</li>
 	</ul>
 </section>
 
-<section class="slide" id="compass-5">
+<section class="slide" id="compass-6">
 	<h2>Compass</h2>
-	<h3>Image generation</h3>
+	<h3>Image generation (Misc.)</h3>
 	<p>Automatically generate PNG images with the bundled ChunkyPNG library</p>
 	<ul>
-		<li><p>Before: <pre style="line-height: 1;"><code class="prettyprint" style="font-size: 70%; line-height: 1;"># In config.rb...
+		<li>
+			<p>Before:</p>
+			<pre style="line-height: 1;"><code class="prettyprint" style="font-size: 70%; line-height: 1;"># In config.rb...
 require 'rgbapng'</code></pre>
 
-<pre style="line-height: 1;"><code class="prettyprint" style="font-size: 70%; line-height: 1;">// In your style sheet...
+			<pre style="line-height: 1;"><code class="prettyprint" style="font-size: 70%; line-height: 1;">// In your style sheet...
 @import "rgbapng";
 
 div {
 	@include rgba-background(rgba(0,0,0,0.75));
-}</code></pre></p></li>
-		<li><p>After: <pre style="line-height: 1;"><code class="prettyprint" style="font-size: 70%; line-height: 1;">div {
+}</code></pre>
+		</li>
+		<li>
+			<p>After:</p>
+			<pre style="line-height: 1;"><code class="prettyprint" style="font-size: 70%; line-height: 1;">div {
   background: url('../img/rgbapng/000000bf.png?1334364155');
   background: rgba(0, 0, 0, 0.75);
-}</code></pre></p></li>
+}</code></pre>
+		</li>
 	</ul>
 </section>
 
