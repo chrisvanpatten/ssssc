@@ -439,27 +439,96 @@ a {
 <section class="slide" id="compass">
 	<h2>Compass</h2>
 	<p>Compass is a framework built on Sass, offering curated mixins and additional functionality.</p>
-	<h3>Like what?</h3>
+	<h1>Like what?</h1>
+</section>
+
+
+<section class="slide" id="compass-2">
+	<h2>Compass</h2>
+	<h3>CSS3 Mixins</h3>
+	<p>Built-in and maintained by Compass. Never write vendor prefixes again!</p>
 	<ul>
-		<li class="slide" id="what-is-compass-1">
-			<p>A full range of pre-built CSS3 mixins</p>
-		</li>
-		<li class="slide" id="what-is-compass-2">
-			<p>Intelligent URL handlers for making asset management a breeze</p>
-		</li>
-		<li class="slide" id="what-is-compass-3">
-			<p>Callbacks so you can do "stuff" on compilation</p>
-		</li>
+		<li><p>Before: <pre><code class="prettyprint">div {
+	background: image-url('image.png');
+}</code></pre></p></li>
+		<li><p>After: <pre><code class="prettyprint">div {
+	background: url('/path/to/image.png');
+}</code></pre></p></li>
+	</ul>
+</section>
+
+
+<section class="slide" id="compass-3">
+	<h2>Compass</h2>
+	<h3>URL handlers</h3>
+	<p>Define paths in your Compass project config, and make asset management a breeze</p>
+	<ul>
+		<li><p>Before: <pre><code class="prettyprint">div {
+	background: image-url('image.png');
+}</code></pre></p></li>
+		<li><p>After: <pre><code class="prettyprint">div {
+	background: url('/path/to/image.png');
+}</code></pre></p></li>
+	</ul>
+</section>
+
+
+<section class="slide" id="compass-4">
+	<h2>Compass</h2>
+	<h3>Callbacks</h3>
+	<p>Do "stuff" as part of the compilation process</p>
+	<ul>
+		<li><p>In your Compass config.rb file:</p>
+		<p><pre style="line-height: 1;"><code class="prettyprint" style="font-size: 70%; line-height: 1;"># Require
+require 'net/ssh'
+require 'net/sftp'
+
+# Instaupload
+sftp_host = 'hostname'
+sftp_user = 'username'
+remote_path = '/path/to/site'
+
+on_stylesheet_saved do |filename|
+	$local_css_path = css_dir + '/' + File.basename(filename)
+	$remote_css_path = remote_path + '/' + css_dir + '/' + File.basename(filename)
+
+	Net::SFTP.start( sftp_host, sftp_user ) do |sftp|
+		sftp.upload! $local_path_to_css_file, $remote_path_to_css_file
+	end
+	puts ">>> File uploaded."
+end</code></pre></p></li>
+	</ul>
+</section>
+
+<section class="slide" id="compass-5">
+	<h2>Compass</h2>
+	<h3>Image generation</h3>
+	<p>Automatically generate PNG images with the bundled ChunkyPNG library</p>
+	<ul>
+		<li><p>Before: <pre style="line-height: 1;"><code class="prettyprint" style="font-size: 80%; line-height: 1;">@import "icons/*.png";
+@include all-icons-sprites;</code></pre></p></li>
+		<li><p>After: <pre style="line-height: 1;"><code class="prettyprint" style="font-size: 80%; line-height: 1;">.my-icons-sprite,
+.icons-delete,
+.icons-edit,
+.icons-new,
+.icons-save   { background: url('/images/icons-s34fe0604ab.png') no-repeat; }
+
+.icons-delete { background-position: 0 0; }
+.icons-edit   { background-position: 0 -32px; }
+.icons-new    { background-position: 0 -64px; }
+.icons-save   { background-position: 0 -96px; }</code></pre></p></li>
+	</ul>
+</section>
+
+
+<!--
 		<li class="slide" id="what-is-compass-4">
 			<p>Automatic image generation (sprites and more)</p>
 		</li>
 		<li class="slide" id="what-is-compass-5">
 			<p>and that's just the start!</p>
 		</li>
-	</ul>
-</section>
-
-
+-->
 
 <!-- deck.navigation snippet -->
 <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
