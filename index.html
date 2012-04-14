@@ -507,11 +507,11 @@ end</code></pre></p></li>
 	<ul>
 		<li><p>Before: <pre style="line-height: 1;"><code class="prettyprint" style="font-size: 80%; line-height: 1;">@import "icons/*.png";
 @include all-icons-sprites;</code></pre></p></li>
-		<li><p>After: <pre style="line-height: 1;"><code class="prettyprint" style="font-size: 80%; line-height: 1;">.my-icons-sprite,
+		<li><p>After: <pre style="line-height: 1;"><code class="prettyprint" style="font-size: 80%; line-height: 1;">.icons-sprite,
 .icons-delete,
 .icons-edit,
 .icons-new,
-.icons-save   { background: url('/images/icons-s34fe0604ab.png') no-repeat; }
+.icons-save   { background: url('../img/icons-s34fe0604ab.png') no-repeat; }
 
 .icons-delete { background-position: 0 0; }
 .icons-edit   { background-position: 0 -32px; }
@@ -520,11 +520,47 @@ end</code></pre></p></li>
 	</ul>
 </section>
 
+<section class="slide" id="compass-5">
+	<h2>Compass</h2>
+	<h3>Image generation</h3>
+	<p>Automatically generate PNG images with the bundled ChunkyPNG library</p>
+	<ul>
+		<li><p>Before: <pre style="line-height: 1;"><code class="prettyprint" style="font-size: 70%; line-height: 1;"># In config.rb...
+require 'rgbapng'</code></pre>
+
+<pre style="line-height: 1;"><code class="prettyprint" style="font-size: 70%; line-height: 1;">// In your style sheet...
+@import "rgbapng";
+
+div {
+	@include rgba-background(rgba(0,0,0,0.75));
+}</code></pre></p></li>
+		<li><p>After: <pre style="line-height: 1;"><code class="prettyprint" style="font-size: 70%; line-height: 1;">div {
+  background: url('../img/rgbapng/000000bf.png?1334364155');
+  background: rgba(0, 0, 0, 0.75);
+}</code></pre></p></li>
+	</ul>
+</section>
+
+<section class="slide" id="compass-more">
+	<h2>Compass</h2>
+	<h3>And that's just the start!</h3>
+	<p>Compass also brings...</p>
+	<ul>
+		<li><p>Built in resets</p></li>
+		<li><p>Vertical rhythm helpers</p></li>
+		<li><p>and a lot more!</p></li>
+	</ul>
+</section>
+
+<section class="slide" id="the-end-1">
+	<h1>So go learn more and make your style sheets sexy!</h1>
+</section>
+
+<section class="slide" id="the-end-2">
+	<h1>fin.</h1>
+</section>
 
 <!--
-		<li class="slide" id="what-is-compass-4">
-			<p>Automatic image generation (sprites and more)</p>
-		</li>
 		<li class="slide" id="what-is-compass-5">
 			<p>and that's just the start!</p>
 		</li>
